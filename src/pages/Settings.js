@@ -8,7 +8,7 @@ import {
     NavItem, NavLink,
     Container, Row,
     Col, Jumbotron,
-    Button, Alert, Form,
+    Button, ButtonGroup, Alert, Form,
     FormGroup, Label, Input,
     FormText
 } from 'reactstrap';
@@ -19,8 +19,10 @@ class Settings extends Component {
         super(props);
         this.toggle = this.toggle.bind(this);
         this.state = {
-            isOpen: false
-        }
+            isOpen: false,
+            Selected: []
+        };
+        this.onCheckboxBtnClick = this.onCheckboxBtnClick.bind(this);
     }
 
     toggle() {
@@ -29,16 +31,25 @@ class Settings extends Component {
         });
     }
 
+    onCheckboxBtnClick(selected) {
+        const index = this.state.Selected.indexOf(selected);
+        if (index < 0) {
+            this.state.Selected.push(selected);
+        } else {
+            this.state.Selected.splice(index, 1);
+        }
+        this.setState({ Selected: [...this.state.Selected] });
+    }
+
     render() {
         return (
             <div>
                 <div className="container">
                     <Form>
                         <FormGroup>
-                            <Label>
-                                Sound:
-                            </Label>
-                            <Input className="float-left" c type="checkbox" />{' '}
+                            <ButtonGroup>
+                                <Button color="primary" onClick={() => this.onCheckboxBtnClick(3)} active={this.state.Selected.includes(3)}>Sound</Button>
+                            </ButtonGroup>
                         </FormGroup>
                         <FormGroup>
                             <Label for="themeSelect">Theme: </Label>
@@ -51,7 +62,7 @@ class Settings extends Component {
                             </Input>
                         </FormGroup>
                         <FormGroup>
-                            <Button color="danger">Clear All Race</Button>{' '}
+                            <Button color="danger" block>Clear All Race</Button>{' '}
                         </FormGroup>
                         <FormGroup tag="fieldset">
                             <FormGroup>

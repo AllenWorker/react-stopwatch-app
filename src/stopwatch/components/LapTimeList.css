@@ -1,0 +1,23 @@
+
+.LapTimeList_list {
+    list-style: none;
+    padding: 0px;
+    margin: 15px auto;
+}
+
+.LapTimeList_listwarp {
+    max-width: 270px;
+    margin: 0 auto;
+}
+
+.LapTimeList_header {
+    width: 100%;
+}
+
+.LapTimeList_headers span {
+    width: 50%;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+    float: left;
+}
