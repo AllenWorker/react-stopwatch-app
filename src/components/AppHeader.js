@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import logo from '../logo.svg';
 import '../styles/App.css';
-import {Link} from 'react-router-dom';
+import {Link, NavLink as RRNavLink} from 'react-router-dom';
 import {
     Collapse, Nav,
     Navbar, NavbarBrand,
@@ -34,13 +34,13 @@ class AppHeader extends Component {
                 <Collapse isOpen={this.state.isOpen} navbar>
                     <Nav className="ml-auto" navbar>
                         <NavItem>
-                            <Link to="/">Stopwatch</Link>
+                            <NavLink className="text-left" to="/home" tag={RRNavLink}>Stopwatch</NavLink>
                         </NavItem>
                         <NavItem>
-                            <Link to="/history">Race History</Link>
+                            <NavLink className="text-left" to="/history" tag={RRNavLink}>Race History</NavLink>
                         </NavItem>
                         <NavItem>
-                            <Link to="/setting">Settings</Link>
+                            <NavLink className="text-left" to="/setting" tag={RRNavLink}>Settings</NavLink>
                         </NavItem>
                     </Nav>
                 </Collapse>

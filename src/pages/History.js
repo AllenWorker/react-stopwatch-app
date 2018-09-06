@@ -19,22 +19,15 @@ class History extends Component {
     constructor(props) {
         super(props);
         this.toggle = this.toggle.bind(this);
-        this.dropdown_toggle = this.dropdown_toggle.bind(this);
         this.state = {
             isOpen: false,
-            dropdownOpen: false
         }
     }
+
 
     toggle() {
         this.setState({
             isOpen: !this.state.isOpen
-        });
-    }
-
-    dropdown_toggle() {
-        this.setState({
-            dropdownOpen: !this.state.dropdownOpen
         });
     }
 
@@ -47,7 +40,7 @@ class History extends Component {
                             <h1 className="App-title">Race: </h1>
                         </Col>
                         <Col className="col-9">
-                            <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.dropdown_toggle}>
+                            <ButtonDropdown isOpen={this.state.isOpen} toggle={this.toggle}>
                                 <DropdownToggle caret>
                                     Race Name
                                 </DropdownToggle>

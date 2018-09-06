@@ -23,7 +23,7 @@ class Controls extends Component {
         const { isRunning, isStarted, start, stop, reset, addLapTime } = this.props;
 
         return (
-            <div className="Controls">
+            <div className="Controls col-12">
                 { !isRunning ?
                     <Button
                         onClick={ start }

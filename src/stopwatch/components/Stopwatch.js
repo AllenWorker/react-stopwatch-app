@@ -5,6 +5,17 @@ import Timer        from './Timer';
 import Controls     from './Controls';
 import LapTimeList  from  './LapTimeList';
 
+import {
+    Collapse, Nav,
+    Navbar, NavbarBrand,
+    NavbarToggler, NavDropdown,
+    NavItem, NavLink,
+    Container, Row,
+    Col, Jumbotron,
+    Button, Alert,
+    Table
+} from 'reactstrap';
+
 import Config       from '../constants/Config';
 
 function getDefaultState() {
@@ -64,19 +75,24 @@ class Stopwatch extends Component {
         const { isRunning, isStarted, time, timeList } = this.state;
         return (
             <div className="Stopwatch">
+                <Row>
+                    <Col md="6">
+                        <Timer time={ time }/>
 
-                <Timer time={ time }/>
+                        <Controls
+                            isRunning={ isRunning }
+                            isStarted={ isStarted }
+                            start={ () => this.start() }
+                            stop={ () => this.stop() }
+                            reset={ () => this.reset() }
+                            addLapTime={ () => this.addLapTime() }
+                        />
+                    </Col>
+                    <Col md="6">
+                        <LapTimeList timeList={ timeList } />
+                    </Col>
+                </Row>
 
-                <Controls
-                    isRunning={ isRunning }
-                    isStarted={ isStarted }
-                    start={ () => this.start() }
-                    stop={ () => this.stop() }
-                    reset={ () => this.reset() }
-                    addLapTime={ () => this.addLapTime() }
-                />
-
-                <LapTimeList timeList={ timeList } />
             </div>
         );
     }
