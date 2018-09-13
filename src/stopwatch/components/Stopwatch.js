@@ -76,7 +76,7 @@ class Stopwatch extends Component {
         return (
             <div className="Stopwatch">
                 <Row>
-                    <Col md="6">
+                    <Col sm="6" md="6" lg="12" xl="12">
                         <Timer time={ time }/>
 
                         <Controls
@@ -88,7 +88,7 @@ class Stopwatch extends Component {
                             addLapTime={ () => this.addLapTime() }
                         />
                     </Col>
-                    <Col md="6">
+                    <Col sm="6" md="6" lg="12" xl="12">
                         <LapTimeList timeList={ timeList } />
                     </Col>
                 </Row>

@@ -23,6 +23,8 @@ class AppHeader extends Component {
             isOpen: !this.state.isOpen
         });
     }
+
+
     render() {
         return(
             <Navbar color="dark" inverse toggleable>

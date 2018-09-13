@@ -1,16 +1,6 @@
 import React, {Component} from 'react';
 import './styles/App.css';
 import Routes from "./routes/Routes";
-import {
-    Collapse, Nav,
-    Navbar, NavbarBrand,
-    NavbarToggler, NavDropdown,
-    NavItem, NavLink,
-    Container, Row,
-    Col, Jumbotron,
-    Button, Alert,
-    Table
-} from 'reactstrap';
 import AppHeader from "./components/AppHeader";
 import {BrowserRouter} from 'react-router-dom';
 
