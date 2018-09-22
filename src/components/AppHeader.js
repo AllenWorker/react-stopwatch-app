@@ -41,9 +41,6 @@ class AppHeader extends Component {
                         <NavItem>
                             <NavLink className="text-left" to="/history" tag={RRNavLink}>Race History</NavLink>
                         </NavItem>
-                        <NavItem>
-                            <NavLink className="text-left" to="/setting" tag={RRNavLink}>Settings</NavLink>
-                        </NavItem>
                     </Nav>
                 </Collapse>
             </Navbar>

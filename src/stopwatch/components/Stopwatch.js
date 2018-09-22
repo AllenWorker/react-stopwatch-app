@@ -23,7 +23,10 @@ function getDefaultState() {
         isRunning   : false,
         isStarted   : false,
         time        : 0,
-        timeList    :[]
+        timeList    :[],
+        raceName    :"Test",
+        raceList    :[{raceName: ""},{timeList: []}],
+        newRaceList :[],
     }
 }
 
@@ -71,6 +74,12 @@ class Stopwatch extends Component {
         });
     }
 
+    saveRace() {
+        const {timeList} = this.state;
+        localStorage.setItem("raceList", JSON.stringify(timeList));
+        this.setState(getDefaultState());
+    }
+
     render() {
         const { isRunning, isStarted, time, timeList } = this.state;
         return (
@@ -86,6 +95,7 @@ class Stopwatch extends Component {
                             stop={ () => this.stop() }
                             reset={ () => this.reset() }
                             addLapTime={ () => this.addLapTime() }
+                            saveRace={() => this.saveRace()}
                         />
                     </Col>
                     <Col sm="6" md="6" lg="12" xl="12">

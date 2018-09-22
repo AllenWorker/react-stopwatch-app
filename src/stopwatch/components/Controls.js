@@ -11,7 +11,8 @@ class Controls extends Component {
         start       : PropTypes.func.isRequired,
         stop        : PropTypes.func.isRequired,
         reset       : PropTypes.func.isRequired,
-        addLapTime  : PropTypes.func.isRequired
+        addLapTime  : PropTypes.func.isRequired,
+        saveRace    : PropTypes.func.isRequired
     };
 
     static defaultProps = {
@@ -20,7 +21,7 @@ class Controls extends Component {
     };
 
     render() {
-        const { isRunning, isStarted, start, stop, reset, addLapTime } = this.props;
+        const { isRunning, isStarted, start, stop, reset, addLapTime, saveRace } = this.props;
 
         return (
             <div className="Controls col-12">
@@ -55,6 +56,14 @@ class Controls extends Component {
                         disabled={ !isRunning }
                         className="Controls_button"
                         ref="lapBtn" > Lap Time </Button>
+                    : null }
+                { isStarted ?
+                    <Button
+                        onClick={ saveRace }
+                        color="info"
+                        disabled={ isRunning }
+                        className="Controls_button"
+                        ref="startBtn" > Save </Button>
                     : null }
             </div>
         );

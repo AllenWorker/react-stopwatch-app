@@ -7,7 +7,8 @@ import LapTime from './LapTime';
 class LapTimeList extends Component {
 
     static proptTypes = {
-        timeList : PropTypes.array
+        timeList : PropTypes.array,
+        raceList : PropTypes.array
     };
 
     static defaultProps = {
@@ -16,7 +17,7 @@ class LapTimeList extends Component {
 
     render() {
 
-        const { timeList} = this.props;
+        const { timeList } = this.props;
 
         return (
             <div className="LapTimeList">
